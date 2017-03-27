@@ -10,13 +10,13 @@ A very basic Docker DynamoDB container.
 ## Build or Pull
 
 ```shell
-docker build -t docker-public/dynamodb
+docker build -t sgtoj/dynamodb
 ```
 
 ## Alternatively, the container can be pulled from Docker Registry
 
 ```shell
-docker pull docker-public/dynamodb
+docker pull sgtoj/dynamodb
 ```
 
 ## Web Shell
@@ -41,25 +41,25 @@ http://my_dynamodb_container:8000/shell
 ### Start Up
 
 ```shell
-docker run -d docker-public/dynamodb
+docker run -d sgtoj/dynamodb
 ```
 
 ### Start Up /w All Ports Exposed to Host
 
 ```shell
-docker run -d -P docker-public/dynamodb
+docker run -d -P sgtoj/dynamodb
 ```
 
 ### Start Up w/ Specific Port Exposed
 
 ```shell
-docker run -d -p 8000:8000 docker-public/dynamodb
+docker run -d -p 8000:8000 sgtoj/dynamodb
 ```
 
 ### Start Up w/ a Mount for Persistent Data
 
 ```shell
-docker run -d -v /host/data/mount/point:/var/dynamodb_data docker-public/dynamodb
+docker run -d -v /host/data/mount/point:/var/dynamodb_data sgtoj/dynamodb
 ```
 
 ## Other
