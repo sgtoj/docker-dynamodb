@@ -1,51 +1,67 @@
 # Docker DynamoDB
-Supported tags
-* **latest** using version dynamodb_local_2016-05-17.tar.gz
-* **2015-07-16_1.0** using version dynamodb_local_2015-07-16_1.0.tar.gz
+
+## Supported Tags
+
+* `latest` using version **dynamodb_local_2017-02-16.tar.gz**
+* `2017-02-16` using version **dynamodb_local_2017-02-16.tar.gz**
 
 A very basic Docker DynamoDB container.
 
-### To build the container
-```
-docker build -t ryanratcliff/dynamodb .
+## Build or Pull
+
+```shell
+docker build -t docker-public/dynamodb
 ```
 
-### Alternatively, the container can be pulled from Docker Registry
-```
-docker pull ryanratcliff/dynamodb
+## Alternatively, the container can be pulled from Docker Registry
+
+```shell
+docker pull docker-public/dynamodb
 ```
 
-# Exposed Endpoints
-The dynamodb local jar besides providing a dynamodb setup for development purposes also exposes a javascript shell for managing the tables
+## Web Shell
 
-### If ports are exposed
-```
+The dynamodb local jar besides providing a dynamodb setup for development
+purposes also exposes a javascript shell for managing the tables
+
+### Standard
+
+```shell
 http://localhost:8000/shell
 ```
 
-### Direct connection to container
-```
+## Direct Container Connection
+
+```shell
 http://my_dynamodb_container:8000/shell
 ```
 
-# Example usages
+## Usage
 
-### To startup as is
-```
-docker run -d ryanratcliff/dynamodb
-```
+### Start Up
 
-### To startup with all ports exposed to host
-```
-docker run -d -P ryanratcliff/dynamodb
+```shell
+docker run -d docker-public/dynamodb
 ```
 
-### To startup with specific port exposed
-```
-docker run -d -p 8000:8000 ryanratcliff/dynamodb
+### Start Up /w All Ports Exposed to Host
+
+```shell
+docker run -d -P docker-public/dynamodb
 ```
 
-### To startup with a mount point for persistent data
+### Start Up w/ Specific Port Exposed
+
+```shell
+docker run -d -p 8000:8000 docker-public/dynamodb
 ```
-docker run -d -v /host/data/mount/point:/var/dynamodb_data ryanratcliff/dynamodb
+
+### Start Up w/ a Mount for Persistent Data
+
+```shell
+docker run -d -v /host/data/mount/point:/var/dynamodb_data docker-public/dynamodb
 ```
+
+## Other
+
+This repository was original forked from [`RyanRatcliff/docker_dynamodb`](https://github.com/RyanRatcliff/docker_dynamodb)

@@ -1,10 +1,16 @@
-FROM ryanratcliff/java8
-MAINTAINER Ryan Ratcliff <ryan.ratcliff@ryanratcliff.net>
-ENV refreshed_at 2016-09-15
+FROM openjdk:alpine
+MAINTAINER Brian Ojeda <docker@sgtoj.codes>
+ENV DYNAMODB_VERSION 2017-02-16
 
-RUN mkdir /opt/dynamodb_local
+RUN apk add --update \
+    wget \
+    ca-certificates
+
+RUN mkdir /opt /opt/dynamodb_local
 RUN mkdir /var/dynamodb_data
-RUN wget -q -O - http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_2016-05-17.tar.gz | tar -xzf - -C /opt/dynamodb_local
+RUN wget -q -O - \
+    http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_2017-02-16.tar.gz \
+    | tar -xzf - -C /opt/dynamodb_local
 
 WORKDIR /opt/dynamodb_local
 VOLUME ["/var/dynamodb_data"]
