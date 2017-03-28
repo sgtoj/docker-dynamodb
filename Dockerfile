@@ -1,4 +1,4 @@
-FROM openjdk:alpine
+FROM openjdk:jre-alpine
 MAINTAINER Brian Ojeda <docker@sgtoj.codes>
 ENV DYNAMODB_VERSION 2017-02-16
 
