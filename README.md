@@ -1,6 +1,6 @@
 # Docker DynamoDB
 
-A very basic Docker DynamoDB container.
+A very basic Docker DynamoDB container with [awscli](https://aws.amazon.com/cli/) installed.
 
 ## Supported Tags
 

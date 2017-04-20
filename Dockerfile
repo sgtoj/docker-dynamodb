@@ -12,6 +12,9 @@ RUN wget -q -O dynamodb_local.tar.gz http://dynamodb-local.s3-website-us-west-2.
     tar xzf dynamodb_local.tar.gz && \
     rm dynamodb_local.tar.gz
 
+RUN apt-get update && \
+    apt-get install -y awscli
+
 RUN mkdir -p /data
 VOLUME /data
 
